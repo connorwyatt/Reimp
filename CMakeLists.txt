@@ -3,5 +3,5 @@ project(Reimp)
 
 set(CMAKE_CXX_STANDARD 14)
 
-set(SOURCE_FILES main.cpp CLIArgumentParser.cpp CLIArgumentParser.h)
+set(SOURCE_FILES main.cpp CLIArgumentParser.cpp CLIArgumentParser.h FileHandler.cpp FileHandler.h)
 add_executable(Reimp ${SOURCE_FILES})
