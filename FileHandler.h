@@ -8,7 +8,7 @@ using namespace std;
 
 class FileHandler
 {
-    vector<string> *lines;
+    vector<string> *lines = NULL;
 public:
     FileHandler(string filename);
 
