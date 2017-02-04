@@ -7,7 +7,7 @@ using namespace std;
 
 class CLIArgumentParser
 {
-    string *target_filename;
+    string *target_filename = NULL;
 public:
     CLIArgumentParser(int argc, char *argv[]);
 
