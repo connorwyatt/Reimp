@@ -1,7 +1,7 @@
 #include <iostream>
 #include "CLIArgumentParser.h"
-#include "FileHandler.h"
 #include "Logger.h"
+#include "SyntaxParser.h"
 
 int main(int argc, char *argv[])
 {
@@ -13,18 +13,9 @@ int main(int argc, char *argv[])
     {
         const string &target_filename = *argumentParser.get_target_filename();
 
-        logger.info();
-        logger.log("Loading file: \"");
-        logger.log(target_filename, ConsoleColor::MAGENTA);
-        logger.log("\".");
-        logger.new_line();
+        SyntaxParser syntaxParser(&logger);
 
-        FileHandler file(target_filename);
-
-        logger.info();
-        logger.log("File loaded.");
-
-        string file_string = file.get_string();
+        syntaxParser.parse_from_file(target_filename);
 
         return 0;
     }

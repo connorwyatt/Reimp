@@ -3,8 +3,14 @@
 
 using namespace std;
 
-FileHandler::FileHandler(string filename)
+FileHandler::FileHandler(Logger *logger, string filename)
 {
+    logger->info();
+    logger->log("Loading file: \"");
+    logger->log(filename, ConsoleColor::MAGENTA);
+    logger->log("\".");
+    logger->new_line();
+
     ifstream file(filename);
 
     static vector<string> file_lines;
@@ -21,6 +27,9 @@ FileHandler::FileHandler(string filename)
     }
 
     lines = &file_lines;
+
+    logger->info();
+    logger->log("File loaded.");
 }
 
 vector<string> *FileHandler::get_lines()

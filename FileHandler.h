@@ -3,6 +3,7 @@
 
 #include <string>
 #include <vector>
+#include "Logger.h"
 
 using namespace std;
 
@@ -10,7 +11,7 @@ class FileHandler
 {
     vector<string> *lines = NULL;
 public:
-    FileHandler(string filename);
+    FileHandler(Logger *logger, string filename);
 
     vector<string> *get_lines();
 
